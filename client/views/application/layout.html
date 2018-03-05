@@ -1,0 +1,11 @@
+<template name="layout">
+  <div class="container">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="{{pathFor, 'postsList'}}">Microscope</a>
+    </nav>
+
+    <div id="main" class="row-fluid">
+      {{yield}}
+    </div>
+  </div>
+</template>
