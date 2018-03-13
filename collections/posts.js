@@ -3,7 +3,7 @@ Posts = new Meteor.Collection('posts');
 Meteor.methods({
   post: function(postAtributes) {
     var user = Meteor.user(),
-      postWithSameLink = Posts.findOne({url: postAtributes.url});
+        postWithSameLink = Posts.findOne({url: postAtributes.url});
 
     // ensure the user is logged in
     if(!user)
@@ -31,12 +31,5 @@ Meteor.methods({
     var postId = Posts.insert(post);
 
     return postId;
-  }
-});
-
-Posts.allow({
-  insert: function(userId, doc) {
-    // only allow posting if you are logged in
-    return !! userId;
   }
 });
