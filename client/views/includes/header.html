@@ -12,11 +12,9 @@
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        {{#if currentUser}}
         <ul class="nav navbar-nav">
-          <li><a href="{{pathFor 'postSubmit'}}">New</a></li>
+          {{#if currentUser}}<li><a href="{{pathFor 'postSubmit'}}">New</a></li>{{/if}}
         </ul>
-        {{/if}}
 
         <ul class="nav navbar-nav pull-right">
           <li>{{> loginButtons}}</li>
