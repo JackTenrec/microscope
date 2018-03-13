@@ -9,9 +9,10 @@ Template.postSubmit.events({
     };
 
     Meteor.call('post', post, function(error, id) {
-      if(error)
-        // return alert(error.reason);
-        swal('Error:', 'Algo salio mal!', error.reason);
+      if(error) {
+        swal('Error', 'Something went wrong! ' + error.reason, 'error');
+        id = error.details;
+      }
 
       Router.go('postPage', {_id: id});
     });
