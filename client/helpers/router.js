@@ -9,7 +9,7 @@ Router.map(function() {
 
   this.route('postPage', {
     path: 'posts/:_id',
-    data: function() { return Posts.findOne({_id: this.params._id}); }
+    data: function() { return Posts.findOne(this.params._id); }
   });
 
   this.route('postSubmit', {
