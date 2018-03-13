@@ -19,9 +19,13 @@ Router.map(function() {
 
 var requireLogin = function() {
   if(! Meteor.user()) {
-    this.render('accessDenied');
-    this.stop();
+    if(Meteor.loggingIn())
+      this.render(this.loadingTemplate);
+    else
+      this.render('accessDenied');
+  } else {
+    this.next();
   }
 }
 
-Router.before(requireLogin, {only: 'postSubmit'});
+Router.before(requireLogin, { only: 'postSubmit' });
