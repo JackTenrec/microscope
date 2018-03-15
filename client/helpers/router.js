@@ -5,7 +5,7 @@ Router.configure({
 });
 
 Router.map(function() {
-  this.route('postsList', {path: '/'});
+  this.route('postList', {path: '/'});
 
   this.route('postPage', {
     path: 'posts/:_id',

@@ -1,5 +1,5 @@
-Template.postsList.helpers({
+Template.postList.helpers({
   posts: function() {
-    return Posts.find({}, {sort: {submited: -1}});
+    return Posts.find({}, {sort: {submitted: -1}});
   }
 });

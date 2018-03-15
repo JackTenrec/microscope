@@ -22,8 +22,8 @@ Meteor.methods({
     }
 
     // pick out the whitelisted keys
-    var post = _.extend(_.pick(postAtributes, 'url', 'title', 'message'), {
-      tite: postAtributes.title + (this.isSimulation ? '(client)' : '(server)'),
+    var post = _.extend(_.pick(postAtributes, 'url', 'message'), {
+      title: postAtributes.title + (this.isSimulation ? '(client)' : '(server)'),
       userId: user._id,
       author: user.username,
       submitted: new Date().getTime()
@@ -35,6 +35,7 @@ Meteor.methods({
       var future = new Future();
       Meteor.setTimeout(function() {
         future.return();
+        console.log('return');
       }, 5 * 1000);
       future.wait();
     }
