@@ -14,7 +14,7 @@ Template.postSubmit.events({
         id = error.details;
       }
 
-      Router.go('postPage', {_id: id});
+      Router.go('postList');
     });
   }
 });
