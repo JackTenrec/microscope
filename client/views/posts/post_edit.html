@@ -1,0 +1,21 @@
+<template name="postEdit">
+  <!-- {{#with post}} -->
+  <form class="main">
+    <div class="form-group">
+      <label for="url">URL</label>
+      <input type="text" class="form-control" id="url" value="{{url}}" placeholder="Your URL">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="title">Title</label>
+      <input type="text" class="form-control" id="title" value="{{title}}" placeholder="Name yor post">
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+
+    <hr>
+
+    <a href="#" class="btn btn-danger delete">Delete post</a>
+  </form>
+  <!-- {{/with}} -->
+</template>
