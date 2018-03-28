@@ -7,6 +7,7 @@ if(Posts.find().count() === 0) {
     profile: { name: 'Tom Coleman' }
   });
   var tom = Meteor.users.findOne(tomId);
+  
   var sachaId = Meteor.users.insert({
     profile: { name: 'Sacha Greif' }
   });
@@ -16,7 +17,8 @@ if(Posts.find().count() === 0) {
     title: 'Introducing Telescope',
     userId: sacha._id,
     author: sacha.profile.name,
-    url: 'http://sachagreif.com/introducing-telescope/', submitted: now - 7 * 3600 * 1000
+    url: 'http://sachagreif.com/introducing-telescope/',
+    submitted: now - 7 * 3600 * 1000
   });
 
   Comments.insert({
