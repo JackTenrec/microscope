@@ -1,3 +1,5 @@
+import { Blaze } from 'meteor/blaze';
+
 Tinytest.add("Errors collection works", (test) => {
   test.equal(Errors.collection.find({}).count(), 0);
 
@@ -12,9 +14,12 @@ Tinytest.add("Errors collection works", (test) => {
 //   test.equal(Errors.collection.find({seen: false}).count(), 1);
 //
 //   // render the template
-//   OnscreenDiv(Spark.render(() => {
+//   OnscreenDiv(Blaze.render(() => {
 //     return Template.meteorErrors();
 //   }));
+//
+//   Blaze.render(Template.loginButtons,
+//   ReactDOM.findDOMNode(this.refs.container))
 //
 //   // UI.insert(UI.render(Template.meteorErrors), document.body);
 //
