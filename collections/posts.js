@@ -38,19 +38,9 @@ Meteor.methods({
       title: postAtributes.title + (this.isSimulation ? '(client)' : '(server)'),
       userId: user._id,
       author: user.username,
-      submitted: new Date().getTime()
+      submitted: new Date().getTime(),
+      commentsCount: 0
     });
-
-    // wait for 5 seconds
-    // if(! this.isSimulation) {
-    //   var Future = Npm.require('fibers/future');
-    //   var future = new Future();
-    //   Meteor.setTimeout(function() {
-    //     future.return();
-    //     console.log('return');
-    //   }, 5 * 1000);
-    //   future.wait();
-    // }
 
     var postId = Posts.insert(post);
 
